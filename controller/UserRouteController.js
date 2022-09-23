@@ -1,12 +1,11 @@
-// const { fs } = require("file-system");
-// const file = require('file-system');
+
 const fs = require('fs');
 const path = require('path');
 const users = require("../users.json");
 
 
 // Get all users by limits
-module.exports.getusers = async (req, res) => {
+module.exports.getAllUsers = async (req, res) => {
     try {
         const query = req.query;
         if (query) {
