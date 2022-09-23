@@ -8,10 +8,12 @@ const router = express.Router();
 const file = require('file-system');
 const fs = require('fs');
 const readFile = require('./middleware/readFile.middleware');
+const usersRoute = require('./routes/UserRoutes.js');
 
 
 
 
+app.use("/user", usersRoute);
 
 app.get("/all",readFile, (req, res) => {
     // let data = fs.writeFile('users.json', 'aaa', function(err) { console.log(err) });
