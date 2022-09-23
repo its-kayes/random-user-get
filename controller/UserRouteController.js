@@ -1,5 +1,7 @@
 const users = require("../users.json");
 
+
+// Get all users by limits
 module.exports.getAllUsers = async (req, res) => {
     try {
         const query = req.query;
@@ -17,13 +19,16 @@ module.exports.getAllUsers = async (req, res) => {
     }
 }
 
+
+// Get Random Files
 module.exports.randomUser = async (req, res) => {
     try {
         const data = users;
         const randomId = Math.floor(Math.random() * data.length);
-        console.log(randomId);
-        res.send({id: randomId});
+        const filteredData = data.filter(data => data.id === (randomId + 1));
+        res.send(filteredData);
     } catch (error) {
-
+        res.send(error.massage);
     }
 }
+
