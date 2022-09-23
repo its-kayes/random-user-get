@@ -1,3 +1,7 @@
+// const { fs } = require("file-system");
+// const file = require('file-system');
+const fs = require('fs');
+const path = require('path');
 const users = require("../users.json");
 
 
@@ -32,3 +36,19 @@ module.exports.randomUser = async (req, res) => {
     }
 }
 
+module.exports.saveUsers = async (req, res) => {
+    try {
+        let preData = users;
+        const user = req.body;
+        // console.log(user);
+        // const newData = preData.push(user);
+        preData.push(user);
+
+        // console.log(newData);
+        return res.send(preData);
+        // res.send({UpdateData: newData});
+
+    } catch (error) {
+
+    }
+}
