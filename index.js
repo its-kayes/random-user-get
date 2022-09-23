@@ -10,33 +10,12 @@ const fs = require('fs');
 const readFile = require('./middleware/readFile.middleware');
 const usersRoute = require('./routes/UserRoutes.js');
 
-
-
-
 app.use("/user", usersRoute);
-
-app.get("/all",readFile, (req, res) => {
-    // let data = fs.writeFile('users.json', 'aaa', function(err) { console.log(err) });
-    // fs.readFile('users.json', function (err, data) {
-    //     res.send({ result: data, success: true });
-    // })
-
-    console.log(req);
-    res.send("got");
-
-    // fs.readFile('users.json', function(err, data) {
-    //     res.writeHead(200, {'Content-Type': 'application/json'});
-    //     // const resu = fs.write(data);
-    //     // console.log(resu);
-    //     res.write(data);
-    //     return res.end();
-    //   });
-})
 
 
 // check get route 
 app.get('/', (req, res) => {
-    res.send('Random User Load');
+    res.send('Random User Load from kayes database');
 })
 
 
